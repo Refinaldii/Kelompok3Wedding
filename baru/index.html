@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jack & Rose - Wedding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#story">STORY</a></li> <!-- gunakan lowercase -->
+      <li class="brand">YB & Wendy</li>
+      <li><a href="#event">EVENT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+ <!-- Hero Section -->
+ <section class="hero">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="TEASER WEDDING REZA OKTOVIAN & WENDY WALTER.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay gelap -->
+  <div class="overlay"></div>
+
+  <!-- Konten di atas video -->
+  <div class="hero-content">
+    <h1>YB & Wendy</h1>
+    <p>WE'RE GETTING MARRIED</p>
+  </div>
+</section>
+
+
+
+
+  <!-- Slider Section -->
+  <section class="slider">
+    <div class="slide"><img src="https://i.pinimg.com/736x/bd/a7/a8/bda7a85d931f75b1f5e9bf6fc28b77a3.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="https://i.pinimg.com/736x/33/a8/75/33a8757d2610555e2b2f5fbb54d4c2e4.jpg" alt="Slide 2"></div>
+    <button id="prevBtn" class="nav-btn">&#10094;</button>
+    <button id="nextBtn" class="nav-btn">&#10095;</button>
+  </section>
+  
+
+  <!-- Background Music -->
+  <audio id="wedding-audio" src="assets/music.mp3" preload="auto"></audio>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>We are two souls brought together by destiny, embarking on a beautiful journey of love and companionship.</p>
+      <div class="about-images">
+        <div>
+          <img src="https://i.pinimg.com/736x/fc/3d/f2/fc3df2a29ae163d0868f738cd4572aec.jpg" alt="Jack">
+          <h3>Reza Arap</h3>
+          <p>The Husband</p>
+        </div>
+        <div>
+          <img src="https://i.pinimg.com/736x/f8/c0/1f/f8c01f5349b0d3a4d0dc1d47a0dd4bf1.jpg" alt="Rose">
+          <h3>Wendy Walters</h3>
+          <p>The Wife</p>
+        </div>
+      </div>
+      <button class="about-button">Learn More</button>
+    </div>
+  </section>
+  
+  <!-- Story Section -->
+  <section id="story" class="story">
+    <div class="story-content">
+      <h2>Our Story</h2>
+      <p>It all started on a beautiful summer day when two strangers met by chance...</p>
+      <div class="story-images">
+        <div>
+          <img src="First Date.jpg" alt="Our First Date">
+          <h3>Our First Date</h3>
+        </div>
+        <div>
+          <img src="https://i.pinimg.com/736x/99/e2/19/99e219e61a4798b9ff23cab29eb18fc4.jpg" alt="The Proposal">
+          <h3>The Proposal</h3>
+        </div>
+      </div>
+      <button class="story-button" style="margin-top: 30px;">Read More</button>
+    </div>
+  </section>
+
+  <!-- Event Section -->
+  <section id="event" class="event">
+    <div class="event-content">
+      <h2>Wedding Event</h2>
+      <p>Join us on our special day as we say "I Do".</p>
+      <p>Date: July 1, 2025</p>
+      <p>Location: Garden Venue, UMY</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or would like to RSVP, please contact us:</p>
+      <p>Email: wedding@ybwendy.com</p>
+      <p>Phone: +62 812-3456-7890</p>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
