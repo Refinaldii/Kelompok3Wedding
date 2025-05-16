@@ -18,7 +18,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   justify-content: center;
   gap: 30px;
   padding: 13px 0 10px;
