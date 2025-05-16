@@ -13,33 +13,27 @@
     <ul>
       <li><a href="#">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
-      <li><a href="#story">STORY</a></li> <!-- gunakan lowercase -->
+      <li><a href="#story">STORY</a></li>
       <li class="brand">YB & Wendy</li>
       <li><a href="#event">EVENT</a></li>
       <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
     </ul>
   </nav>
 
- <!-- Hero Section -->
- <section class="hero">
-  <!-- Video Background -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="TEASER WEDDING REZA OKTOVIAN & WENDY WALTER.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay gelap -->
-  <div class="overlay"></div>
-
-  <!-- Konten di atas video -->
-  <div class="hero-content">
-    <h1>YB & Wendy</h1>
-    <p>WE'RE GETTING MARRIED</p>
-  </div>
-</section>
-
-
-
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="TEASER WEDDING REZA OKTOVIAN & WENDY WALTER.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>YB & Wendy</h1>
+      <p>WE'RE GETTING MARRIED</p>
+      <button class="play-button">▶</button>
+      <audio id="wedding-audio" src="assets/music.mp3" preload="auto"></audio>
+    </div>
+  </section>
 
   <!-- Slider Section -->
   <section class="slider">
@@ -48,10 +42,6 @@
     <button id="prevBtn" class="nav-btn">&#10094;</button>
     <button id="nextBtn" class="nav-btn">&#10095;</button>
   </section>
-  
-
-  <!-- Background Music -->
-  <audio id="wedding-audio" src="assets/music.mp3" preload="auto"></audio>
 
   <!-- About Section -->
   <section id="about" class="about">
@@ -60,12 +50,12 @@
       <p>We are two souls brought together by destiny, embarking on a beautiful journey of love and companionship.</p>
       <div class="about-images">
         <div>
-          <img src="https://i.pinimg.com/736x/fc/3d/f2/fc3df2a29ae163d0868f738cd4572aec.jpg" alt="Jack">
+          <img src="https://i.pinimg.com/736x/fc/3d/f2/fc3df2a29ae163d0868f738cd4572aec.jpg" alt="Reza Arap">
           <h3>Reza Arap</h3>
           <p>The Husband</p>
         </div>
         <div>
-          <img src="https://i.pinimg.com/736x/f8/c0/1f/f8c01f5349b0d3a4d0dc1d47a0dd4bf1.jpg" alt="Rose">
+          <img src="https://i.pinimg.com/736x/f8/c0/1f/f8c01f5349b0d3a4d0dc1d47a0dd4bf1.jpg" alt="Wendy Walters">
           <h3>Wendy Walters</h3>
           <p>The Wife</p>
         </div>
@@ -73,7 +63,7 @@
       <button class="about-button">Learn More</button>
     </div>
   </section>
-  
+
   <!-- Story Section -->
   <section id="story" class="story">
     <div class="story-content">
@@ -89,7 +79,7 @@
           <h3>The Proposal</h3>
         </div>
       </div>
-      <button class="story-button" style="margin-top: 30px;">Read More</button>
+      <button class="story-button">Read More</button>
     </div>
   </section>
 
@@ -112,6 +102,35 @@
       <p>Phone: +62 812-3456-7890</p>
     </div>
   </section>
+
+  <!-- RSVP Section -->
+  <section id="rsvp" class="rsvp">
+    <div class="rsvp-content">
+      <h2>RSVP</h2>
+      <p>Kindly let us know if you’ll be able to join us on our special day.</p>
+      <form id="rsvpForm" class="rsvp-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="attendance">Will you attend?</label>
+          <select id="attendance" name="attendance" required>
+            <option value="">-- Please select --</option>
+            <option value="yes">Yes, I'll be there!</option>
+            <option value="no">Sorry, I can't make it</option>
+          </select>
+        </div>
+        <button type="submit" class="rsvp-button">Submit RSVP</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Popup Structure -->
+  <div id="popupOverlay" class="popup-overlay"></div>
+  <div id="promoPopup" class="promo-popup">
+    <div class="popup-content"></div>
+  </div>
 
   <!-- Script -->
   <script src="script.js"></script>
