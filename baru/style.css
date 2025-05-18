@@ -78,6 +78,25 @@ body {
   cursor: pointer;
 }
 
+.audio-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.audio-toggle:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+
 /* Slider */
 .slider {
   position: relative;

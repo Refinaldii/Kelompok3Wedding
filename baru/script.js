@@ -107,3 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
     rsvpForm?.reset();
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('wedding-audio');
+  const toggleBtn = document.getElementById('audioToggle');
+  let isPlaying = false;
+
+  toggleBtn.addEventListener('click', function () {
+    if (isPlaying) {
+      audio.pause();
+      toggleBtn.textContent = '🔇';
+    } else {
+      audio.play();
+      toggleBtn.textContent = '🔊';
+    }
+    isPlaying = !isPlaying;
+  });
+});
