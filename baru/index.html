@@ -6,7 +6,11 @@
   <title>YB & Wendy - Wedding</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+
+
 <body>
+
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -20,7 +24,9 @@
       <li><a href="#rsvp">RSVP</a></li>
     </ul>
   </nav>
-
+<!-- di index.html -->
+<a href="admin.html" class="admin-button">Admin Panel</a>
+  
   <!-- Hero Section -->
   <section class="hero">
     <video autoplay muted loop playsinline class="bg-video">
@@ -31,6 +37,7 @@
       <h1>YB & Wendy</h1>
       <p>WE'RE GETTING MARRIED</p>
       <audio id="wedding-audio" src="CHRISYE.mp3" preload="auto"></audio>
+      
     </div>
     <button id="audioToggle" class="audio-toggle">🔊</button>
 
@@ -61,7 +68,7 @@
           <p>The Wife</p>
         </div>
       </div>
-      <button class="about-button">Learn More</button>
+      <button class="about-button" onclick="location.href='about-more.html'">Learn More</button>
     </div>
   </section>
 
@@ -80,7 +87,7 @@
           <h3>The Proposal</h3>
         </div>
       </div>
-      <button class="story-button">Read More</button>
+      <button class="story-button" onclick="location.href='story-more.html'">Read More</button>
     </div>
   </section>
 
@@ -104,7 +111,7 @@
     </div>
   </section>
 
-  <!-- RSVP Section -->
+    <!-- RSVP Section -->
   <section id="rsvp" class="rsvp">
     <div class="rsvp-content">
       <h2>RSVP</h2>
@@ -132,6 +139,41 @@
   <div id="promoPopup" class="promo-popup">
     <div class="popup-content"></div>
   </div>
+  <script>
+  const audio = document.getElementById('wedding-audio');
+  const toggleButton = document.getElementById('audioToggle');
+
+  // Play audio on page load after small user gesture (bypass browser restriction)
+  window.addEventListener('DOMContentLoaded', () => {
+    // Wait for user interaction (e.g., click anywhere)
+    const playAudio = () => {
+      audio.play().catch(() => {
+        // Optional: show message if audio failed to autoplay
+        console.log("Autoplay failed. User interaction is required.");
+      });
+      document.removeEventListener('click', playAudio);
+    };
+    document.addEventListener('click', playAudio);
+  });
+
+  // Toggle audio with button
+  toggleButton.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      toggleButton.textContent = '🔊';
+    } else {
+      audio.pause();
+      toggleButton.textContent = '🔇';
+    }
+  });
+
+  // Stop audio when user leaves the page
+  window.addEventListener('beforeunload', () => {
+    audio.pause();
+    audio.currentTime = 0; // Reset audio to beginning
+  });
+</script>
+
 
   <!-- Script -->
   <script src="script.js"></script>

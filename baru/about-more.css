@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #1a151f, #232935);
+  color: #eee8b2; /* teks body kuning lembut */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000000; /* atau warna navbar kamu */
+  transition: top 0.3s ease;
+  z-index: 9999;
+  /* styling lain terserah kamu */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  padding: 13px 0 10px;
+}
+.navbar ul li { font-weight: bold; }
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 26px;
+  transition: color 0.3s;
+}
+.navbar ul li a:hover { color: #f5c58f; }
+.brand {
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #f5c58f;
+}
+
+.brand {
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #f5c58f;
+}
+
+/* Section About More */
+.about-more {
+  max-width: 800px;
+  margin: 5px auto 50px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+.about-more h1 {
+  margin-bottom: 30px;
+  color: #f5c58f; /* kuning pastel */
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.profiles {
+  display: flex;
+  gap: 20px; /* <-- GANTI INI */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.profile-card {
+  flex: 0 0 calc(50% - 20px);
+  background: linear-gradient(135deg, #231d2a, #2b3750);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  height: 500px;
+  transition: transform 0.2s ease;
+  text-align: center;
+  color: #eee8b2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 0.6);
+}
+
+.profile-card h2 {
+  margin-top: 0;
+  color: #5a8f76; /* hijau muda */
+  font-size: 1.5rem;
+}
+
+.profile-card p {
+  color: #eee8b2;
+  line-height: 1.5;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+button.back-btn {
+  margin-top: 40px; /* tambah jarak atas */
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #081b1b; /* gelap hijau-hitam */
+  color: #eee8b2; /* kuning krem */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button.back-btn:hover {
+  background-color: #5a8f76; /* hijau muda */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+  .profiles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    width: 90%;
+  }
+}

@@ -12,8 +12,13 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: rgba(0,0,0,0.5);
-  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  z-index: 9999;
+  transition: top 0.3s ease;
 }
 .navbar ul {
   list-style: none;
@@ -37,6 +42,81 @@ body {
   color: #f5c58f;
 }
 
+.admin-login {
+  padding: 60px 20px;
+  background-color: #111;
+  text-align: center;
+  color: white;
+}
+
+.admin-login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5c58f;
+}
+
+.admin-login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.admin-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f5c58f;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+  background-color: #d49f61;
+}
+
+.admin-error {
+  color: red;
+  display: none;
+  margin-top: 10px;
+}
+.admin-rsvp {
+  display: none;
+  padding: 60px 20px;
+  background-color: #000;
+  color: white;
+  text-align: center;
+}
+
+.admin-rsvp-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rsvp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rsvp-table th, .rsvp-table td {
+  border: 1px solid #f5c58f;
+  padding: 10px;
+  text-align: left;
+}
+
+.rsvp-table th {
+  background-color: #222;
+  color: #f5c58f;
+}
+  
 /* Hero Section */
 .hero {
   position: relative;
@@ -79,22 +159,22 @@ body {
 }
 
 .audio-toggle {
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 50%;
   right: 20px;
+  transform: translateY(-50%);
   background: rgba(255,255,255,0.7);
   border: none;
   padding: 10px 15px;
   font-size: 18px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s;
+  z-index: 10000;
 }
-
 .audio-toggle:hover {
   background: rgba(255,255,255,0.9);
 }
+
 
 
 /* Slider */
@@ -126,7 +206,7 @@ body {
 
 /* About Section */
 .about {
-  background-color: #111;
+  background: linear-gradient(135deg, #1a151f, #232935);
   padding: 60px 20px;
   text-align: center;
 }
@@ -180,7 +260,7 @@ body {
 
 /* Story Section */
 .story {
-  background-color: #222;
+  background: linear-gradient(135deg, #1a151f, #232935);
   padding: 60px 20px;
   text-align: center;
 }
@@ -228,10 +308,11 @@ body {
 
 /* Event Section */
 .event {
-  background-color: #111;
+  background: linear-gradient(135deg, #1a151f, #232935);
   padding: 60px 20px;
   text-align: center;
 }
+
 .event-content {
   max-width: 800px;
   margin: 0 auto;
@@ -365,3 +446,25 @@ body {
   .brand { font-size: 18px; }
   .about-images img, .story-images img { width: 150px; height: 150px; }
 }
+
+.admin-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f5c58f;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+.admin-button:hover {
+  background-color: #d49f61;
+}
+
