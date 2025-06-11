@@ -4,178 +4,320 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>YB & Wendy - Wedding</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS (jika masih ingin menambahkan styling tambahan) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-
-
 <body>
-
-
   <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#story">STORY</a></li>
-      <li class="brand">YB & Wendy</li>
-      <li><a href="#event">EVENT</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-      <li><a href="#rsvp">RSVP</a></li>
-    </ul>
-  </nav>
-<!-- di index.html -->
-<a href="admin.html" class="admin-button">Admin Panel</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container position-relative">
+    <!-- 1. Toggler button (muncul di kiri) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavSplit"
+      aria-controls="navbarNavSplit"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 2. Brand di tengah, pakai absolute centering -->
+    <a
+      class="navbar-brand position-absolute start-50 translate-middle-x fs-2"
+      href="#"
+      style="z-index: 2;"
+    >
+      YB &amp; Wendy
+    </a>
+
+    <!-- 3. Collapse berisi dua kelompok menu: kiri dan kanan -->
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarNavSplit"
+    >
+      <!-- Menu Kiri: HOME, ABOUT, STORY -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#story">STORY</a>
+        </li>
+      </ul>
+
+      <!-- Menu Kanan: EVENT, CONTACT, RSVP -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#event">EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">CONTACT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rsvp">RSVP</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  <!-- Admin Panel Button -->
+  <a href="admin.html" class="btn btn-primary position-fixed bottom-0 end-0 m-3">Admin Panel</a>
   
   <!-- Hero Section -->
-  <section class="hero">
-    <video autoplay muted loop playsinline class="bg-video">
+  <section class="hero position-relative vh-100">
+    <video autoplay muted loop playsinline class="bg-video position-absolute w-100 h-100" style="object-fit: cover;">
       <source src="TEASER WEDDING REZA OKTOVIAN & WENDY WALTER.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>YB & Wendy</h1>
-      <p>WE'RE GETTING MARRIED</p>
+    <div class="overlay position-absolute w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+    <div class="hero-content position-relative h-100 d-flex flex-column justify-content-center align-items-center text-white text-center px-3">
+      <h1 class="display-3 fw-bold">YB & Wendy</h1>
+      <p class="fs-4">WE'RE GETTING MARRIED</p>
       <audio id="wedding-audio" src="CHRISYE.mp3" preload="auto"></audio>
-      
     </div>
-    <button id="audioToggle" class="audio-toggle">🔊</button>
-
+    <button
+      id="audioToggle"
+      class="audio-toggle btn btn-outline-light position-absolute bottom-0 end-0 m-3 rounded-circle d-flex justify-content-center align-items-center"
+      style="width: 50px; height: 50px; padding: 0;">
+      <i id="volumeIcon" class="bi bi-volume-up fs-4"></i>
+    </button>
   </section>
 
   <!-- Slider Section -->
-  <section class="slider">
-    <div class="slide"><img src="https://i.pinimg.com/736x/bd/a7/a8/bda7a85d931f75b1f5e9bf6fc28b77a3.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="https://i.pinimg.com/736x/33/a8/75/33a8757d2610555e2b2f5fbb54d4c2e4.jpg" alt="Slide 2"></div>
-    <button id="prevBtn" class="nav-btn">&#10094;</button>
-    <button id="nextBtn" class="nav-btn">&#10095;</button>
+  <section class="slider py-5">
+    <div class="container">
+      <div id="weddingCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://i.pinimg.com/736x/bd/a7/a8/bda7a85d931f75b1f5e9bf6fc28b77a3.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.pinimg.com/736x/33/a8/75/33a8757d2610555e2b2f5fbb54d4c2e4.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#weddingCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#weddingCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <h2>About Us</h2>
-      <p>We are two souls brought together by destiny, embarking on a beautiful journey of love and companionship.</p>
-      <div class="about-images">
-        <div>
-          <img src="https://i.pinimg.com/736x/fc/3d/f2/fc3df2a29ae163d0868f738cd4572aec.jpg" alt="Reza Arap">
+  <section id="about" class="about py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4">About Us</h2>
+        <p class="lead">We are two souls brought together by destiny, embarking on a beautiful journey of love and companionship.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 mb-4 mb-md-0 text-center">
+          <img src="https://i.pinimg.com/736x/fc/3d/f2/fc3df2a29ae163d0868f738cd4572aec.jpg" class="img-fluid rounded-circle mb-3" alt="Reza Arap" style="width: 200px; height: 200px; object-fit: cover;">
           <h3>Reza Arap</h3>
-          <p>The Husband</p>
+          <p class="text-muted">The Husband</p>
         </div>
-        <div>
-          <img src="https://i.pinimg.com/736x/f8/c0/1f/f8c01f5349b0d3a4d0dc1d47a0dd4bf1.jpg" alt="Wendy Walters">
+        <div class="col-md-5 text-center">
+          <img src="https://i.pinimg.com/736x/f8/c0/1f/f8c01f5349b0d3a4d0dc1d47a0dd4bf1.jpg" class="img-fluid rounded-circle mb-3" alt="Wendy Walters" style="width: 200px; height: 200px; object-fit: cover;">
           <h3>Wendy Walters</h3>
-          <p>The Wife</p>
+          <p class="text-muted">The Wife</p>
         </div>
       </div>
-      <button class="about-button" onclick="location.href='about-more.html'">Learn More</button>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary" onclick="location.href='about-more.html'">Learn More</button>
+      </div>
     </div>
   </section>
 
   <!-- Story Section -->
-  <section id="story" class="story">
-    <div class="story-content">
-      <h2>Our Story</h2>
-      <p>It all started on a beautiful summer day when two strangers met by chance...</p>
-      <div class="story-images">
-        <div>
-          <img src="First Date.jpg" alt="Our First Date">
-          <h3>Our First Date</h3>
+  <section id="story" class="story py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4">Our Story</h2>
+        <p class="lead">It all started on a beautiful summer day when two strangers met by chance...</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="First Date.jpg" class="img-fluid rounded mb-3" alt="Our First Date">
+          <h3 class="text-center">Our First Date</h3>
         </div>
-        <div>
-          <img src="https://i.pinimg.com/736x/99/e2/19/99e219e61a4798b9ff23cab29eb18fc4.jpg" alt="The Proposal">
-          <h3>The Proposal</h3>
+        <div class="col-md-6">
+          <img src="https://i.pinimg.com/736x/99/e2/19/99e219e61a4798b9ff23cab29eb18fc4.jpg" class="img-fluid rounded mb-3" alt="The Proposal">
+          <h3 class="text-center">The Proposal</h3>
         </div>
       </div>
-      <button class="story-button" onclick="location.href='story-more.html'">Read More</button>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary" onclick="location.href='story-more.html'">Read More</button>
+      </div>
     </div>
   </section>
 
   <!-- Event Section -->
-  <section id="event" class="event">
-    <div class="event-content">
-      <h2>Wedding Event</h2>
-      <p>Join us on our special day as we say "I Do".</p>
-      <p>Date: July 1, 2025</p>
-      <p>Location: Garden Venue, UMY</p>
+  <section id="event" class="event py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="display-4 mb-4">Wedding Event</h2>
+      <p class="lead mb-4">Join us on our special day as we say "I Do".</p>
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="card border-0 bg-transparent">
+            <div class="card-body">
+              <i class="bi bi-calendar-event fs-1 mb-3"></i>
+              <h3 class="card-title">Date</h3>
+              <p class="card-text">July 1, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 bg-transparent">
+            <div class="card-body">
+              <i class="bi bi-geo-alt fs-1 mb-3"></i>
+              <h3 class="card-title">Location</h3>
+              <p class="card-text">Garden Venue, UMY</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="contact-content">
-      <h2>Contact Us</h2>
-      <p>If you have any questions or would like to RSVP, please contact us:</p>
-      <p>Email: wedding@ybwendy.com</p>
-      <p>Phone: +62 812-3456-7890</p>
+  <section id="contact" class="contact py-5">
+    <div class="container text-center">
+      <h2 class="display-4 mb-4">Contact Us</h2>
+      <p class="lead mb-4">If you have any questions or would like to RSVP, please contact us:</p>
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="card border-0">
+            <div class="card-body">
+              <i class="bi bi-envelope fs-1 mb-3"></i>
+              <h3 class="card-title">Email</h3>
+              <p class="card-text">wedding@ybwendy.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0">
+            <div class="card-body">
+              <i class="bi bi-telephone fs-1 mb-3"></i>
+              <h3 class="card-title">Phone</h3>
+              <p class="card-text">+62 812-3456-7890</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-    <!-- RSVP Section -->
-  <section id="rsvp" class="rsvp">
-    <div class="rsvp-content">
-      <h2>RSVP</h2>
-      <p>Kindly let us know if you’ll be able to join us on our special day.</p>
-      <form id="rsvpForm" class="rsvp-form">
-        <div class="form-group">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" required>
+  <!-- RSVP Section -->
+  <section id="rsvp" class="rsvp py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-4 mb-4">RSVP</h2>
+          <p class="lead mb-5">Kindly let us know if you'll be able to join us on our special day.</p>
+          <form id="rsvpForm" class="needs-validation" novalidate>
+            <div class="mb-3 text-start">
+              <label for="name" class="form-label">Your Name:</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+              <div class="invalid-feedback">
+                Please enter your name.
+              </div>
+            </div>
+            <div class="mb-4 text-start">
+              <label for="attendance" class="form-label">Will you attend?</label>
+              <select class="form-select" id="attendance" name="attendance" required>
+                <option value="">-- Please select --</option>
+                <option value="yes">Yes, I'll be there!</option>
+                <option value="no">Sorry, I can't make it</option>
+              </select>
+              <div class="invalid-feedback">
+                Please choose an option.
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit RSVP</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="attendance">Will you attend?</label>
-          <select id="attendance" name="attendance" required>
-            <option value="">-- Please select --</option>
-            <option value="yes">Yes, I'll be there!</option>
-            <option value="no">Sorry, I can't make it</option>
-          </select>
-        </div>
-        <button type="submit" class="rsvp-button">Submit RSVP</button>
-      </form>
+      </div>
     </div>
   </section>
 
-  <!-- Popup Structure -->
-  <div id="popupOverlay" class="popup-overlay"></div>
-  <div id="promoPopup" class="promo-popup">
-    <div class="popup-content"></div>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 YB & Wendy Wedding. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS untuk Audio Toggle & Form Validation -->
   <script>
-  const audio = document.getElementById('wedding-audio');
-  const toggleButton = document.getElementById('audioToggle');
+    // Audio Toggle
+    const audio = document.getElementById('wedding-audio');
+    const toggleButton = document.getElementById('audioToggle');
+    const volumeIcon = toggleButton.querySelector('i');
 
-  // Play audio on page load after small user gesture (bypass browser restriction)
-  window.addEventListener('DOMContentLoaded', () => {
-    // Wait for user interaction (e.g., click anywhere)
-    const playAudio = () => {
-      audio.play().catch(() => {
-        // Optional: show message if audio failed to autoplay
-        console.log("Autoplay failed. User interaction is required.");
-      });
-      document.removeEventListener('click', playAudio);
-    };
-    document.addEventListener('click', playAudio);
-  });
+    // Play audio setelah ada interaksi pengguna (bypass autoplay restriction)
+    window.addEventListener('DOMContentLoaded', () => {
+      const playAudio = () => {
+        audio.play().catch(() => {
+          console.log("Autoplay gagal. Dibutuhkan interaksi pengguna.");
+        });
+        document.removeEventListener('click', playAudio);
+      };
+      document.addEventListener('click', playAudio);
+    });
 
-  // Toggle audio with button
-  toggleButton.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      toggleButton.textContent = '🔊';
-    } else {
+    toggleButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        volumeIcon.classList.replace('bi-volume-mute', 'bi-volume-up');
+      } else {
+        audio.pause();
+        volumeIcon.classList.replace('bi-volume-up', 'bi-volume-mute');
+      }
+    });
+
+    // Reset audio saat halaman ditinggalkan
+    window.addEventListener('beforeunload', () => {
       audio.pause();
-      toggleButton.textContent = '🔇';
-    }
-  });
+      audio.currentTime = 0;
+    });
 
-  // Stop audio when user leaves the page
-  window.addEventListener('beforeunload', () => {
-    audio.pause();
-    audio.currentTime = 0; // Reset audio to beginning
-  });
-</script>
-
-
-  <!-- Script -->
-  <script src="script.js"></script>
+    // Bootstrap Form Validation (RSVP)
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
 </body>
 </html>
